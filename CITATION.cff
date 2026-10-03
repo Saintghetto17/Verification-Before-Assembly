@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or the associated paper, please cite it as below."
+title: "Verification Before Assembly: A Low-Cost Verifier for Generated Scientific Video Frames"
+authors:
+  - family-names: Gromov
+    given-names: Egor
+url: "https://openreview.net/forum?id=cNyEkRsJgC"
+repository-code: "https://github.com/Saintghetto17/Verification-Before-Assembly"
+repository-artifact: "https://huggingface.co/datasets/Saintghetto17/verification-before-assembly"
+license: Apache-2.0
+keywords:
+  - scientific figure verification
+  - multimodal fact-checking
+  - meta-science
+  - NeurIPS workshop
+preferred-citation:
+  type: conference-paper
+  title: "Verification Before Assembly: A Low-Cost Verifier for Generated Scientific Video Frames"
+  authors:
+    - family-names: Gromov
+      given-names: Egor
+  year: 2026
+  collection-title: "NeurIPS 2026 Workshop on AI for Meta-Science: Scaling and Organizing Science in the Age of AI"
+  url: "https://openreview.net/forum?id=cNyEkRsJgC"

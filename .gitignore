@@ -1,0 +1,32 @@
+# Secrets / local env
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+__MACOSX/
+
+# Large local artifacts (not shipped)
+outputs/
+tfevents/
+train_ckpt/
+logs/
+data.zip
+*.pt
+*.pth
+!checkpoints/arbiter.pkl
+!checkpoints/scaler.pkl
+
+# Editor / tooling
+.idea/
+.vscode/
+*.swp
+
+# Optional local data dumps
+data/figures/
+data_router/byt/
+data_router/video/
+data_router/graph/
+data_router/scheme/

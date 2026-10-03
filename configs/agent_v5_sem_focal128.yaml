@@ -1,0 +1,28 @@
+name: agent_v5_sem_focal128
+paths:
+  figures_dir: data/figures
+  router_data_dir: data_router
+  router_ckpt: checkpoints/router.pth
+  sem_ckpt: train_ckpt/agent_v5_sem_focal128/sem.pt
+  arbiter_ckpt: checkpoints/arbiter.pkl
+  scaler_ckpt: checkpoints/scaler.pkl
+  train_ckpt_dir: train_ckpt/agent_v5_sem_focal128
+  output_dir: outputs/agent_v5_sem_focal128
+  features_csv: outputs/agent_v5_sem_focal128/features.csv
+siglip:
+  pretrained: /home/jovyan/.cache/huggingface/hub/models--google--siglip-base-patch16-224/snapshots/7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed
+  max_text_length: 128
+  batch_size: 64
+sem_train:
+  epochs: 8
+  batch_size: 32
+  lr_head: 1.0e-4
+  lr_backbone: 2.0e-6
+  weight_decay: 0.01
+  test_ratio: 0.2
+  freeze_backbone_epochs: 1
+  seed: 42
+  loss_type: focal
+  focal_gamma: 2.0
+  pair_aware_batches: false
+device: cuda

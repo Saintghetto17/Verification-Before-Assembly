@@ -1,0 +1,74 @@
+name: agent_v6
+
+paths:
+  figures_dir: data/figures
+  router_data_dir: data_router
+  checkpoints_dir: checkpoints
+  router_ckpt: checkpoints/router.pth
+  sem_ckpt: checkpoints/sem.pt
+  arbiter_ckpt: checkpoints/arbiter.pkl
+  scaler_ckpt: checkpoints/scaler.pkl
+  train_ckpt_dir: train_ckpt/agent_v6
+  output_dir: outputs/agent_v6
+  features_csv: outputs/agent_v6/features.csv
+
+siglip:
+  pretrained: "/home/jovyan/.cache/huggingface/hub/models--google--siglip-base-patch16-224/snapshots/7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed"
+  max_text_length: 64
+  batch_size: 128
+
+sem_train:
+  epochs: 4
+  batch_size: 64
+  lr_head: 1.0e-4
+  lr_backbone: 2.0e-6
+  weight_decay: 0.01
+  test_ratio: 0.15
+  freeze_backbone_epochs: 1
+  seed: 42
+
+router:
+  classes: [byt, video, graph, scheme]
+  image_size: 224
+  epochs: 15
+  batch_size: 128
+  learning_rate: 1.0e-4
+  num_per_class_train: 250
+  num_per_class_val: 50
+  num_video_train: 800
+  num_video_val: 160
+  seed: 42
+
+arbiter:
+  test_ratio: 0.2
+  seed: 42
+  n_estimators: 100
+  max_depth: 6
+  learning_rate: 0.1
+  decision_threshold: null
+  max_clean_per_corrupted: 3.0
+  feature_log_every_pct: 1.0
+  feature_log_every_n: 50
+  feature_batch_size: 64
+  ocr_batch_size: 128
+  ocr_use_gpu: true
+
+graph:
+  smol_pretrained: "/home/jovyan/.cache/huggingface/hub/models--HuggingFaceTB--SmolLM2-360M-Instruct/snapshots/a10cc1512eabd3dde888204e902eca88bddb4951"
+  detector_pretrained: iSEE-Laboratory/llmdet_tiny
+  dataset_dir: graph_creator_model_dataset
+  val_ratio: 0.15
+  seed: 42
+  epochs: 3
+  batch_size: 4
+  grad_accum: 4
+  lr: 2.0e-5
+  weight_decay: 0.01
+  max_seq_len: 1536
+  warmup_ratio: 0.03
+  max_new_tokens: 512
+  eval_generate_n: 64
+  lora_r: 16
+
+device: cuda
+limit: null

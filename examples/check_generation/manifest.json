@@ -1,0 +1,61 @@
+{
+  "total_samples": 10,
+  "note": "5 orig + 5 paired fail; not from prompt_engineering; not golden",
+  "pairs": [
+    {
+      "sample_number": 1,
+      "dir_name": "01_document_80_figure_3",
+      "fail_source": "ml_l2_fail/document_80/figure_3",
+      "orig_source": "ml_orig/document_80/figure_3",
+      "lie": "Перемешаны графики",
+      "files": [
+        "figure_3.png",
+        "figure_3.json"
+      ]
+    },
+    {
+      "sample_number": 2,
+      "dir_name": "02_document_133_figure_2",
+      "fail_source": "ml_l2_fail/document_133/figure_2",
+      "orig_source": "ml_orig/document_133/figure_2",
+      "lie": "Изменен текст внутри блоков",
+      "files": [
+        "figure_2.png",
+        "figure_2.json"
+      ]
+    },
+    {
+      "sample_number": 3,
+      "dir_name": "03_document_125_figure_1",
+      "fail_source": "ml_l2_fail/document_125/figure_1",
+      "orig_source": "ml_orig/document_125/figure_1",
+      "lie": "добавлены блоки",
+      "files": [
+        "figure_1.png",
+        "figure_1.json"
+      ]
+    },
+    {
+      "sample_number": 4,
+      "dir_name": "04_document_104_figure_1",
+      "fail_source": "juri_l2_fail/document_104/figure_1",
+      "orig_source": "juri_orig/document_104/figure_1",
+      "lie": "Изменены подписи к блокам",
+      "files": [
+        "figure_1.png",
+        "figure_1.json"
+      ]
+    },
+    {
+      "sample_number": 5,
+      "dir_name": "05_document_70_figure_30",
+      "fail_source": "juri_l2_fail/document_70/figure_30",
+      "orig_source": "juri_orig/document_70/figure_30",
+      "lie": "Перемешаны изображения",
+      "files": [
+        "figure_30.png",
+        "figure_30.json"
+      ]
+    }
+  ]
+}

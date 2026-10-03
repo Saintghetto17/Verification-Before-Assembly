@@ -1,0 +1,25 @@
+pydantic>=2.0
+PyYAML>=6.0
+python-dotenv>=1.0
+tensorboard
+scikit-learn
+xgboost
+opencv-python-headless
+networkx
+matplotlib
+joblib
+transformers
+pillow
+pandas
+tqdm
+pytesseract
+easyocr
+sentencepiece
+spacy
+peft
+huggingface_hub
+# Dependency parser model: python -m spacy download en_core_web_sm
+# torch / torchvision: install separately (CPU or CUDA), e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# Dataset: https://huggingface.co/datasets/Saintghetto17/verification-before-assembly
+#   python scripts/download_data.py

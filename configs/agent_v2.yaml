@@ -1,0 +1,43 @@
+name: agent_v2
+
+paths:
+  figures_dir: data/figures
+  router_data_dir: data_router
+  output_dir: outputs/agent_v2
+  router_ckpt: outputs/agent_v2/router.pth
+  arbiter_ckpt: outputs/agent_v2/arbiter.pkl
+  scaler_ckpt: outputs/agent_v2/scaler.pkl
+  # CSV only for reporting (written during train_arbiter feature pass)
+  features_csv: outputs/agent_v2/features.csv
+
+siglip:
+  pretrained: "/home/jovyan/.cache/huggingface/hub/models--google--siglip-base-patch16-224/snapshots/7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed"
+  max_text_length: 64
+  batch_size: 8
+
+router:
+  classes: [byt, video, graph, scheme]
+  image_size: 224
+  epochs: 15
+  batch_size: 64
+  learning_rate: 1.0e-4
+  num_per_class_train: 250
+  num_per_class_val: 50
+  num_video_train: 800
+  num_video_val: 160
+  seed: 42
+
+arbiter:
+  test_ratio: 0.2
+  seed: 42
+  n_estimators: 100
+  max_depth: 6
+  learning_rate: 0.1
+  decision_threshold: null
+  max_clean_per_corrupted: 3.0
+  # log feature-gen progress at least every N% (also every log_every_n rows)
+  feature_log_every_pct: 1.0
+  feature_log_every_n: 50
+
+device: cuda
+limit: null
